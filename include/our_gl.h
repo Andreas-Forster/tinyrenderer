@@ -17,6 +17,6 @@ struct IShader {
 };
 
 //void triangle(Vec4f *pts, IShader &shader, TGAImage &image, float *zbuffer);
-void triangle(mat<4,3,float> &pts, IShader &shader, TGAImage &image, float *zbuffer);
+void triangle(Eigen::Matrix<float,4,3> &pts, IShader &shader, TGAImage &image, float *zbuffer);
 #endif //__OUR_GL_H__
 

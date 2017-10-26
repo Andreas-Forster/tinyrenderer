@@ -4,6 +4,29 @@
 #include <vector>
 #include <cassert>
 #include <iostream>
+#include <Eigen/Dense>
+
+typedef Eigen::Matrix<float,2,1> Vec2f;
+typedef Eigen::Matrix<int,2,1>   Vec2i;
+typedef Eigen::Matrix<float,3,1> Vec3f;
+typedef Eigen::Matrix<int,3,1>   Vec3i;
+typedef Eigen::Matrix<float,4,1> Vec4f;
+typedef Eigen::Matrix<float, 4,4> Matrix;
+
+
+inline Vec4f embed(Vec3f v, float t) { Vec4f v4; v4.fill(t); for(int i=0; i<3; i++) v4(i) = v(i); return v4;}
+
+
+
+
+
+
+
+
+
+
+
+
 
 template<size_t DimCols,size_t DimRows,typename T> class mat;
 
@@ -211,11 +234,20 @@ template <size_t DimRows,size_t DimCols,class T> std::ostream& operator<<(std::o
 
 /////////////////////////////////////////////////////////////////////////////////
 
-typedef vec<2,  float> Vec2f;
-typedef vec<2,  int>   Vec2i;
-typedef vec<3,  float> Vec3f;
-typedef vec<3,  int>   Vec3i;
-typedef vec<4,  float> Vec4f;
-typedef mat<4,4,float> Matrix;
+typedef vec<2,  float> OldVec2f;
+typedef vec<2,  int>   OldVec2i;
+typedef vec<3,  float> OldVec3f;
+typedef vec<3,  int>   OldVec3i;
+typedef vec<4,  float> OldVec4f;
+typedef mat<4,4,float> OldMatrix;
+
+
+
+
+
+
+
+
+
 #endif //__GEOMETRY_H__
 
